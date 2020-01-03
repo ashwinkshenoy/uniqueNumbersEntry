@@ -13,13 +13,13 @@ function twoSum(arr, target) {
     let diff = target - arr[i];
     if(numObject.hasOwnProperty(diff) && numObject[diff] !== i) {
       return [i, numObject[diff]];
-      // return [arr[i], parseInt(Object.keys(numObject)[i+1])];
+      // return [arr[i], parseInt(Object.keys(numObject)[numObject[diff]])];
     } else {
       return 'No number-pair found'
     }
   }
 }
 
-console.log(twoSum([1,2,3,4,5], 6))
+console.log(twoSum([1,2,3,4,5], 5))
 
 // Object.keys(foo)[0]

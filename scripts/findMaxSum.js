@@ -23,4 +23,4 @@ function findMinMax(array) {
   return {minSum, maxSum}
 }
 
-console.log(findMinMax([1,5,3,4,2]))
+console.log(findMinMax([1,3,4,2]))

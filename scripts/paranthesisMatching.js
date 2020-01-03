@@ -36,7 +36,6 @@ console.log(isMatchingBrackets("(){}"));
 console.log(isMatchingBrackets("[{()()}({[]})]({}[({})])((((((()[])){}))[]{{{({({({{{{{{}}}}}})})})}}}))[][][]"));
 console.log(isMatchingBrackets("({(()))}}"));
 console.timeEnd("isMatchingBrackets");
-console.timeLog("isMatchingBrackets");
 console.log("**************************");
 
 
@@ -44,9 +43,9 @@ console.log("**************************");
 
 function isBalanced([...str]) {
   return str.reduce((uptoPrevChar, thisChar) => {
-    ((thisChar === '{' && uptoPrevChar++ || thisChar === '}' && uptoPrevChar--)) &&
-    ((thisChar === '[' && uptoPrevChar++ || thisChar === ']' && uptoPrevChar--)) &&
-    ((thisChar === '(' && uptoPrevChar++ || thisChar === ')' && uptoPrevChar--))
+    (thisChar === '{' && uptoPrevChar++ || thisChar === '}' && uptoPrevChar--) &&
+    (thisChar === '[' && uptoPrevChar++ || thisChar === ']' && uptoPrevChar--) &&
+    (thisChar === '(' && uptoPrevChar++ || thisChar === ')' && uptoPrevChar--)
     return uptoPrevChar
   }, 0) === 0
 }
@@ -56,4 +55,3 @@ console.log(isBalanced("(){}"));
 console.log(isBalanced("[{()()}({[]})]({}[({})])((((((()[])){}))[]{{{({({({{{{{{}}}}}})})})}}}))[][][]"));
 console.log(isBalanced("({(()))}}"));
 console.timeEnd("isBalanced");
-console.timeLog("isBalanced");

@@ -22,4 +22,4 @@ function fibonacci(num, memo) {
 //   return fibonacci(num - 1) + fibonacci(num - 2);
 // }
 
-console.log(fibonacci(40))
+console.log(fibonacci(10))

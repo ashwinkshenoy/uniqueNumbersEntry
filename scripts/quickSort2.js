@@ -45,4 +45,4 @@ console.time("quickSort");
 console.log(quickSort([2,1,3]));
 console.log(quickSort([2,1,3,3,0,5,3,90,8,43]));
 console.timeEnd("quickSort");
-console.timelog("quickSort");
+
