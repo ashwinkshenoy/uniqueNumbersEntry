@@ -3,16 +3,20 @@
 
 const list = [
   {
-    id: 3,
-    next: 4
+    id: 7,
+    next: 8
   },
   {
     id: 2,
-    next: 3
+    next: 6
   },
   {
-    id: 1,
-    next: 2
+    id: 6,
+    next: 7
+  },
+  {
+    id: 8,
+    next: 9
   },
 ];
 
@@ -20,15 +24,15 @@ function sortList(list) {
   let b = [];
 
   for(let i=0; i<list.length; i++) {
-    if(b.length === 0) {
-      for(let j=i+1; j<list.length; j++) {
-        if(list[i].id !== list[j].next) {
-          b.push(list[j]);
-          continue;
-        }
+    for(let j=i+1; j<list.length; j++) {
+      if(list[i].id !== list[j].next) {
+        b.push(list[j]);
       }
+      break;
     }
+    break;
   }
+
   return b
 }
 
@@ -51,4 +55,6 @@ function naiveSort(linkedList) {
   return sortedList;
 }
 
+console.time("sort");
 console.log(naiveSort(list))
+console.timeEnd("sort");
