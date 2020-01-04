@@ -20,24 +20,27 @@ const list = [
   },
 ];
 
-function sortList(list) {
+function head(list) {
   let b = [];
-
-  for(let i=0; i<list.length; i++) {
-    for(let j=i+1; j<list.length; j++) {
-      if(list[i].id !== list[j].next) {
-        b.push(list[j]);
+  
+  // Get the list without the head
+  for(let i = 0; i < list.length; i++) {
+    for(let j = 0; j < list.length; j++) {
+      if(list[i].id === list[j].next) {
+        b.push(list[i])
+        break;
       }
-      break;
     }
-    break;
   }
+
+  // Filter the list for head from b
+  b = list.filter((i) => !b.includes(i))
 
   return b
 }
 
 function naiveSort(linkedList) {
-  var sortedList = sortList(linkedList);
+  var sortedList = head(linkedList); // get head
   var index = 0;
   var next = sortedList[index].next;
 
