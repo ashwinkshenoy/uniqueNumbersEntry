@@ -5,12 +5,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="icon" type="image/png" href="https://www.spykk.com/img/favicon.png">
+  <link rel="stylesheet" href="./bms.css">
   <title>JS</title>
 </head>
 <body>
   <div id="app">
+    <div class="container">
+      <div class="white-box">
+        <label for="number">Enter the numbers followed by commas or range</label>
+        <input type="text" id="number" placeholder="Ex: 1,2,3-5" autocomplete="off">
+
+        <div class="unique entered-values">
+          Unique Numbers: <span id="uniqueNumbers"></span>
+        </div>
+        <div class="range entered-values">
+          Range: <span id="rangeNumbers"></span>
+        </div>
+        <hr>
+        <div class="range entered-values">
+          Previous Numbers: <span id="prevNumbers"></span>
+        </div>
+        <div class="range entered-values">
+          Diff Numbers: <span id="diffNumbers"></span>
+        </div>
+      </div>
+    </div>
   </div>
   <!-- <script src='./train.js'></script> -->
-  <script src='./scripts/sortLinkedList.js'></script>
+  <script src='./bms.js'></script>
 </body>
 </html>

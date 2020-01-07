@@ -1,0 +1,48 @@
+@import url("https://use.typekit.net/cnc8rvf.css");
+
+body {
+  background: #f7f7f7;
+  font-family: sofia-pro, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Fira Sans, Helvetica Neue, Helvetica,
+    Arial, sans-serif;
+}
+
+.container {
+  max-width: 1170px;
+  margin: 0 auto;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.white-box {
+  background: white;
+
+  max-width: 350px;
+  padding: 30px;
+  flex: 1 0 0;
+  border-radius: 5px;
+  box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.16);
+}
+
+.white-box label {
+  margin-bottom: 10px;
+  font-size: 14px;
+  display: block;
+}
+
+.white-box input {
+  height: 38px;
+  border: solid 1px #ccc;
+  border-radius: 4px;
+  width: 90%;
+  padding: 0 10px;
+  outline: none;
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.entered-values {
+  margin: 10px 0;
+  font-size: 14px;
+}
