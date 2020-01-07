@@ -4,7 +4,7 @@ function retreiveNumbers() {
 
 
 function getRange(start, end) {
-  const length = end - start;
+  const length = (end+1) - start;
   return Array.from({ length }, (v, i) => start + i);
 }
 
