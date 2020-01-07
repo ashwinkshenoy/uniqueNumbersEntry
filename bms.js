@@ -2,6 +2,13 @@ function retreiveNumbers() {
   prevNumber.innerHTML = JSON.parse(localStorage.getItem('numbers'))
 }
 
+
+function getRange(start, end) {
+  const length = end - start;
+  return Array.from({ length }, (v, i) => start + i);
+}
+
+
 function getNumber(value) {
   let number = value
   if(/^[a-zA-Z]/.test(number)) return;
@@ -46,14 +53,7 @@ function getNumber(value) {
   if(localNumbers.length > 0) {
     diffNumber.innerHTML = values.filter((i) => !localNumbers.includes(i))
   }
-  localStorage.setItem('numbers', JSON.stringify(values))
   return values;
-}
-
-
-function getRange(start, end) {
-  if(start === end) return [start];
-  return [start, ...getRange(start + 1, end)];
 }
 
 
@@ -75,6 +75,7 @@ function debounce(func, wait, immediate) {
 
 let init = debounce(function() {
   let values = getNumber(this.value);
+  localStorage.setItem('numbers', JSON.stringify(values))
   console.log(values)
 }, 500);
 
