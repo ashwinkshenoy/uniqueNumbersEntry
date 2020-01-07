@@ -1,24 +1,10 @@
-
-const uniqueNumber = document.getElementById('uniqueNumbers');
-const rangeNumber = document.getElementById('rangeNumbers');
-const prevNumber = document.getElementById('prevNumbers');
-const diffNumber = document.getElementById('diffNumbers');
-
-window.onload = retreiveNumbers();
-
 function retreiveNumbers() {
   prevNumber.innerHTML = JSON.parse(localStorage.getItem('numbers'))
 }
 
-document.getElementById('number').addEventListener('change', init);
-
-function init() {
-  let values = getNumber(this.value)
-
-}
-
 function getNumber(value) {
   let number = value
+  if(/^[a-zA-Z]/.test(number)) return;
   number = number.split(',')
   
   // Get Range
@@ -55,7 +41,7 @@ function getNumber(value) {
   }
   
   
-  let values = [ ...newRange, ...number, ...localNumbers].sort()
+  let values = [ ...newRange, ...number, ...localNumbers].sort((a,b) => a-b)
   values = [... new Set(values)]
   
   localStorage.setItem('numbers', JSON.stringify(values))
@@ -63,7 +49,40 @@ function getNumber(value) {
   return values;
 }
 
+
 function getRange(start, end) {
   if(start === end) return [start];
   return [start, ...getRange(start + 1, end)];
 }
+
+
+function debounce(func, wait, immediate) {
+	var timeout;
+	return function() {
+		var context = this, args = arguments;
+		var later = function() {
+			timeout = null;
+			if (!immediate) func.apply(context, args);
+		};
+		var callNow = immediate && !timeout;
+		clearTimeout(timeout);
+		timeout = setTimeout(later, wait);
+		if (callNow) func.apply(context, args);
+	};
+};
+
+
+let init = debounce(function() {
+	let values = getNumber(this.value);
+  console.log(values)
+}, 500);
+
+
+const uniqueNumber = document.getElementById('uniqueNumbers');
+const rangeNumber = document.getElementById('rangeNumbers');
+const prevNumber = document.getElementById('prevNumbers');
+const diffNumber = document.getElementById('diffNumbers');
+
+window.onload = retreiveNumbers();
+
+document.getElementById('number').addEventListener('input', init);

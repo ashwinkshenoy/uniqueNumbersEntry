@@ -45,4 +45,5 @@ body {
 .entered-values {
   margin: 10px 0;
   font-size: 14px;
+  word-break: break-word;
 }
