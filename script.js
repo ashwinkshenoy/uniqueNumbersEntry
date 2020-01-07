@@ -13,13 +13,13 @@ function getNumber(value) {
   let number = value
   if(/^[a-zA-Z]/.test(number)) return;
   number = number.split(',')
-  
+
   // Get Range
   range = number.filter((item) => {
     if(item.indexOf("-") != -1) {
       return item
     }
-  })
+  });
 
   // Get numbers(without range)
   number = number.filter((item) => {
