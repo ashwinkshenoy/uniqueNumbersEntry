@@ -21,7 +21,7 @@ function getNumber(value) {
     }
   })
   
-  // Get ranges
+  // Get ranges values
   newRange = range.map((item) => {
     let value = item.split('-');
     value = getRange(parseInt(value[0]), parseInt(value[1]))
@@ -39,7 +39,6 @@ function getNumber(value) {
   if(localNumbers.length > 0) {
     localNumbers = JSON.parse(localNumbers);
   }
-  
   
   let values = [ ...newRange, ...number, ...localNumbers].sort((a,b) => a-b)
   values = [... new Set(values)]
