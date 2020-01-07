@@ -9,15 +9,17 @@ body {
 .container {
   max-width: 1170px;
   margin: 0 auto;
-  height: 80vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+}
+
+h1 {
+  text-align: center;
+  font-weight: 300;
+  margin: 40px 0 40px;
 }
 
 .white-box {
   background: white;
-
+  margin: 0 auto;
   max-width: 350px;
   padding: 30px;
   flex: 1 0 0;

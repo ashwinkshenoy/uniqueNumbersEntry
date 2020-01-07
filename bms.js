@@ -37,15 +37,17 @@ function getNumber(value) {
   localNumbers = localStorage.getItem('numbers') || [];
 
   if(localNumbers.length > 0) {
-    localNumbers = JSON.parse(localNumbers)
+    localNumbers = JSON.parse(localNumbers);
   }
   
   
   let values = [ ...newRange, ...number, ...localNumbers].sort((a,b) => a-b)
   values = [... new Set(values)]
   
+  if(localNumbers.length > 0) {
+    diffNumber.innerHTML = values.filter((i) => !localNumbers.includes(i))
+  }
   localStorage.setItem('numbers', JSON.stringify(values))
-  diffNumber.innerHTML = values.filter((i) => !localNumbers.includes(i))
   return values;
 }
 
